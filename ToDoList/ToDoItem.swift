@@ -1,0 +1,14 @@
+//
+//  ToDoItem.swift
+//  ToDoList
+//
+//  Created by Michael Ryan on 9/24/20.
+//  Copyright © 2020 Michael Ryan. All rights reserved.
+//
+
+import Foundation
+struct ToDoItem {
+    var name: String
+    var date: Date
+    var notes: String
+}

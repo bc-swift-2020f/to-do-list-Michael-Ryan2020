@@ -26,7 +26,7 @@ class ToDoDetailTableViewController: UITableViewController {
         datePicker.date = toDoItem.date
         noteView.text = toDoItem.notes
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         toDoItem = ToDoItem(name: nameField.text!, date: datePicker.date, notes: noteView.text)
     }

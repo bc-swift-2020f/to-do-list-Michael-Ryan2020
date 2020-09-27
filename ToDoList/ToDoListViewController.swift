@@ -31,7 +31,7 @@ class ToDoListViewController: UIViewController {
             toDoItems = try jsonDecoder.decode(Array< ToDoItem> .self, from: data)
             tableView.reloadData()
         } catch {
-            print("Could not save data \(error.localizedDescription)")
+            print("Could not load data \(error.localizedDescription)")
         }
     }
     func saveData() {
@@ -42,7 +42,7 @@ class ToDoListViewController: UIViewController {
         do {
             try data?.write(to: documentURL, options: .noFileProtection)
         } catch {
-            print("Could not load data \(error.localizedDescription)")
+            print("Could not save data \(error.localizedDescription)")
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,6 +93,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     cell.textLabel?.text = toDoItems[indexPath.row].name
     return cell
+   
 }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

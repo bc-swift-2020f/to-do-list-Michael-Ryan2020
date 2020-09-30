@@ -158,8 +158,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     print("CellForRowAt was just called for indexPath.row = \(indexPath.row) which is the cell containing \(toDoItems[indexPath.row])")
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
     cell.delegate = self
-    cell.nameLabel.text = toDoItems[indexPath.row].name
-    cell.checkBoxButton.isSelected = toDoItems[indexPath.row].completed
+    cell.toDoItem = toDoItems[indexPath.row]
     return cell
    
 }
